@@ -7,10 +7,16 @@ export const Appstyled = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  font-family: "Roboto", sans-serif;
+  font-family: "Song Myung", serif;
+  font-size: 2rem;
   transition: all 0.3s cubic-bezier(0.5, 2, 0.25, 1);
 
   padding: 20px;
+
+  @media (max-width: 700px) {
+    font-size: 1em;
+    padding: 20px;
+  }
 
   input {
     border: 5px solid gray;

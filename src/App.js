@@ -3,6 +3,7 @@ import axios from "axios";
 import { Appstyled, Titlestyled } from "./app.styled";
 import Card from "./Card/card";
 import { GlobalStyles } from "./global";
+import Footer from "./footer/footer";
 function App() {
   const [searched, setSearched] = useState("");
   const [input, setInput] = useState();
@@ -57,7 +58,12 @@ function App() {
         />
         <button>검색</button>
       </Appstyled>
-      {row && <Card row={row} head={head} />}
+      {row ? (
+        <Card row={row} head={head} />
+      ) : (
+        <Appstyled>찾을수가없습니더..💨</Appstyled>
+      )}
+      <Footer />
     </div>
   );
 }
