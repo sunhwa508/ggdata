@@ -4,7 +4,7 @@ export const Footerstyled = styled.footer`
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,13 +19,14 @@ export const Footerstyled = styled.footer`
   p {
     color: #cccccc;
     margin-top: 7px;
+    font-size: 0.6em;
   }
 
   .icons a {
     margin: 10px;
     cursor: pointer;
     color: rgb(172, 168, 168);
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: 0.5s;
   }
   .icons:hover a:not(:hover) {

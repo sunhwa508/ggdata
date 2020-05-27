@@ -22,8 +22,8 @@ export default function Carddetail({ item }) {
           <KakaoMap
             id={item.SIGUN_CD}
             apiUrl={url}
-            width="205px"
-            height="205px"
+            width="240px"
+            height="240px"
             level={2}
             lat={item.REFINE_WGS84_LAT}
             lng={item.REFINE_WGS84_LOGT}

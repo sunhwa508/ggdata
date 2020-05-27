@@ -18,18 +18,14 @@ export const Appstyled = styled.form`
     padding: 20px;
   }
   input {
+    width: 80%;
     border: 5px solid gray;
     -webkit-appearance: none;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
   }
   button {
     width: 20%;
-    box-sizing: content-box;
+
     -webkit-appearance: none;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: content-box;
   }
   input,
   button {
