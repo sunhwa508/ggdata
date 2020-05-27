@@ -1,17 +1,15 @@
-import React from "react";
-import CardDetail from "../cardDetail/carddetail";
-export default function Card({ row }) {
+import React, { useState } from "react";
+import Carddetail from "../cardDetail/carddetail";
+import { Citystyled } from "./card.styled";
+export default function Card({ row, head }) {
   return (
-    <div>
+    <Citystyled>
+      {head && <p>검색결과❓{head.list_total_count}건</p>}
       {row.map((item) => (
         <>
-          <h2>{item.CMPNM_NM}</h2>
-          <p>{item.INDUTYPE_NM}</p>
-          <p>{item.SIGUN_NM}</p>
-          <p>{item.REFINE_LOTNO_ADDR}</p>
-          <CardDetail item={item} />
+          <Carddetail item={item} />
         </>
       ))}
-    </div>
+    </Citystyled>
   );
 }
