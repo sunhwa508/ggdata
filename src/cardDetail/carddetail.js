@@ -6,7 +6,7 @@ export default function Carddetail({ item }) {
   const [toggle, Toggler] = useToggler(false);
   const url =
     "https://dapi.kakao.com/v2/maps/sdk.js?appkey=bc03c06c7d77eb8b2aa132291864fe6b";
-  console.log(item);
+
   return (
     <Citydetail style={{ backgroundColor: toggle ? "white" : "lightgray" }}>
       {item && (
@@ -22,8 +22,8 @@ export default function Carddetail({ item }) {
           <KakaoMap
             id={item.SIGUN_CD}
             apiUrl={url}
-            width="300px"
-            height="300px"
+            width="205px"
+            height="205px"
             level={2}
             lat={item.REFINE_WGS84_LAT}
             lng={item.REFINE_WGS84_LOGT}

@@ -28,6 +28,7 @@ export const Citydetail = styled.div`
 
     @media (max-width: 700px) {
       font-size: 1em;
+      padding: 0;
     }
   }
 

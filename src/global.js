@@ -6,6 +6,10 @@ export const GlobalStyles = createGlobalStyle`
     padding: 40px;
     background-color:#f9f9f9;
 
+    @media (max-width: 700px) {
+
+      padding: 5px;
+    }
   }
   *, *::after, *::before {
     box-sizing: border-box;
