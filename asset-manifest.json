@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/https//sunhwa508/github.io/ggdata/static/css/main.5f361e03.chunk.css",
+    "main.js": "/https//sunhwa508/github.io/ggdata/static/js/main.522ee8a2.chunk.js",
+    "main.js.map": "/https//sunhwa508/github.io/ggdata/static/js/main.522ee8a2.chunk.js.map",
+    "runtime-main.js": "/https//sunhwa508/github.io/ggdata/static/js/runtime-main.682911c3.js",
+    "runtime-main.js.map": "/https//sunhwa508/github.io/ggdata/static/js/runtime-main.682911c3.js.map",
+    "static/js/2.3eb3d583.chunk.js": "/https//sunhwa508/github.io/ggdata/static/js/2.3eb3d583.chunk.js",
+    "static/js/2.3eb3d583.chunk.js.map": "/https//sunhwa508/github.io/ggdata/static/js/2.3eb3d583.chunk.js.map",
+    "index.html": "/https//sunhwa508/github.io/ggdata/index.html",
+    "precache-manifest.4e0740a06d42453a3db9462d9c4dc705.js": "/https//sunhwa508/github.io/ggdata/precache-manifest.4e0740a06d42453a3db9462d9c4dc705.js",
+    "service-worker.js": "/https//sunhwa508/github.io/ggdata/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/https//sunhwa508/github.io/ggdata/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.3eb3d583.chunk.js.LICENSE.txt": "/https//sunhwa508/github.io/ggdata/static/js/2.3eb3d583.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.682911c3.js",
+    "static/js/2.3eb3d583.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.522ee8a2.chunk.js"
+  ]
+}
