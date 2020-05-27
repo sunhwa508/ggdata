@@ -17,12 +17,18 @@ export const Appstyled = styled.form`
     font-size: 1em;
     padding: 20px;
   }
-
   input {
     border: 5px solid gray;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
   button {
     width: 20%;
+    border: 5px solid gray;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
   input,
   button {
