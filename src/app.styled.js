@@ -19,10 +19,17 @@ export const Appstyled = styled.form`
   }
   input {
     border: 5px solid gray;
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
   button {
     width: 20%;
     box-sizing: content-box;
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: content-box;
   }
   input,
   button {
@@ -30,6 +37,7 @@ export const Appstyled = styled.form`
     font-size: 2rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: none;
+    box-sizing: content-box;
     border-radius: 10px;
     @media (max-width: 700px) {
       font-size: 1rem;
