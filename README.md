@@ -80,19 +80,9 @@ yarn add react-kakao-map
 
 사용법은 정말 간단했다 라이브러리설치후, 문서에 나온 방법처럼, 
 
-<KakaoMap//제공된 kakaomapcomponent
-id={item.SIGUN_CD}      
-          apiUrl={url}
-            width="240px"
-            height="240px"
-            level={2}
-            lat={item.REFINE_WGS84_LAT}
-            lng={item.REFINE_WGS84_LOGT}
-          >
-            <Marker/제공된 kakaomap marker component
-              lat={item.REFINE_WGS84_LAT}
-              lng={item.REFINE_WGS84_LOGT}
-            ></Marker> </KakaoMap>
+<KakaoMap//제공된 kakaomapcomponent<br/>
+id={item.SIGUN_CD}  apiUrl={url} width="240px"height="240px" level={2} lat={item.REFINE_WGS84_LAT}lng={item.REFINE_WGS84_LOGT}>
+<br/> <Marker/제공된 kakaomap marker component  lat={item.REFINE_WGS84_LAT}  lng={item.REFINE_WGS84_LOGT}  ></Marker> </KakaoMap>
 
 지도를 표현하는 kakaoMap 컴포넌트와  주소(지점)에 MARK해주는 MARK(gps아이콘같이 생긴..)가 지원되었고<br/>
 내가 원하는 기능이 ..이미 다 구현되었다. lat, lng props에는 미리 받아두었던 공공 api 에서 가져온 lat, lng값을 각각 주었다. 
