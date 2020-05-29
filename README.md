@@ -128,9 +128,10 @@ export const Citystyled = styled.div`
    "predeploy": "npm run-script build",
     "deploy": "gh-pages -d build"
 
-npm i gh-pages 설치 후
+yarn add gh-pages 설치 후
 package.json에 위와같이 홈페이지와 ""scripts" 의 predeploy, deploy 설정 후
-npm run deploy를 통해 deploy해준다.
+yarn deploy를 통해 deploy해준다. 
+//yarn 과 npm의 차이 npm 은 npm run deploy 처럼 run을 해주는 반면 yarn은 deploy만 해주면 된다.
 
 
 ## ✔Built With
