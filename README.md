@@ -80,8 +80,9 @@ yarn add react-kakao-map
 
 사용법은 정말 간단했다 라이브러리설치후, 문서에 나온 방법처럼, 
 <pre><code>
-<KakaoMap   id={item.SIGUN_CD}
-            apiUrl={url}
+<KakaoMap   
+      id={item.SIGUN_CD}      
+          apiUrl={url}
             width="240px"
             height="240px"
             level={2}
