@@ -16,7 +16,7 @@
 yarn global add create-react-app yarn을 사용해 리액트 프로젝트 앱 생성하기<br/>
 AJAX통신을 용이하게 도와줄 axios라이브러리 사용<br/>
 https://openapi.gg.go.kr/RegionMnyFacltStus 회원가입후 개인 apikey 생성<br/>
-
+//dapi.kakao.com/ 카카오맵을 사용할 예정이므로, 카카오개발자페이지 가입 후 , api생성후 플랫폼에 url등록 localhost:3000 <br/>
 ### ✔Installing
 react환경구축 (yarn 사용해보기)
 패키지 매니저인 yarn 과 npm 마치 티몬과 쿠팡의 비교대상인마냥 큰 차이는 없는데요, <br/>
