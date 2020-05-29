@@ -1,70 +1,101 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<h1>🛒지역화폐사용처 앱🛒</h1>
+
 
 ![Group 5 (1)](https://user-images.githubusercontent.com/61695175/83236488-8e3e3d80-a1ce-11ea-97d3-340a5bdf528c.png)
 
-### `yarn start`
+## 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### ✔Prerequisites
+npx create-react-app moflix "Moflix"라는 이름의 리액트 프로젝트 앱 생성하기<br/>
+AJAX통신을 용이하게 도와줄 axios라이브러리 사용<br/>
+https://www.omdbapi.com 회원가입후 개인 apikey 생성<br/>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✔Installing
+react환경구축
+npm버전 : npm i react-router-dom <br />
+yarn버전 : yarn add react-router-dom
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+ SPA구현을 위한 react route설정으로 "react-router-dom": "^5.2.0" 버전 설치<br/>
+"gh-pages" 를 이용해 github.io 무료 호스팅 사용
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## ✔AJAX 데이터 통신 테스트 실행
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+const [loading, setLoading] = useState(true);<br/>
+  const [error, setError] = useState(false);<br/>
+  const [hasMore, setHasMore] = useState(false);<br/>
+  const [movies, setMovies] = useState([]);<br/>
 
-## Learn More
+로딩중관리, 에러처리, infinite Scroll구현을 위해 마지막 쿼리인지에 필요한 bool변수, 
+데이터를 담을 movies로 useState훅을 사용해 state 구성 
+<pre><code>
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    axios({
+      method: "GET",
+      url: apiurl,
+      params: { s: query, page: pageNumber },
+    }).then((res) => {
+      if (res.data.Response !== "False") {
+        setMovies((prevMovies) => [...prevMovies, ...res.data.Search]);
+      //스프레드 연산자를 사용하여, 모든 데이터가 setMovies 배열안에 담길수 있도록 하였다. 
+        console.log("hasMore hook", res.data.Search.length > 0);
+        setHasMore(res.data.Search.length > 0);
+      //data 배열의 길이값을 가져와 데이터가 더 남아있는지, 더이상 찾을 수 없는지 구분 할 수 있도록 설정하였다.
+        setLoading(false);
+      //로딩중 페이지 출력여부 true/false를 구분하기 위함.
+      }
+    });
+  }, [query, pageNumber]);
+</code></pre>
+axios를 통한 데이터 통신은 useEffect를 이용해 동기로 처리하였으며, query(검색어), pageNumber이 바뀔때마다
+데이터를 받아오도록 구현하였다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## ✔Deployment
+"homepage": "https://sunhwa508.github.io/moflix/",
 
-### Analyzing the Bundle Size
+   "predeploy": "npm run-script build",
+    "deploy": "gh-pages -d build"
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+npm i gh-pages 설치 후
+package.json에 위와같이 홈페이지와 ""scripts" 의 predeploy, deploy 설정 후
+npm run deploy를 통해 deploy해준다.
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## ✔Built With
 
-### Advanced Configuration
+*  const apiurl = "https://www.omdbapi.com/?apikey=MY_API&"; - The API was provided
+* (https://sunhwa508.github.io/moflix/) - Used to generate RSS Feeds
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+## ✔Versioning
+<ul>
+<li>"react": "^16.13.1",</li>
+<li>"react-dom": "^16.13.1",</li>
+<li>"react-router-dom": "^5.2.0",</li>
+<li>"react-scripts": "3.4.1",</li>
+<li>"scss": "^0.2.4"</li>
+<li>"gh-pages": "^2.2.0"</li>
+</ul>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
+## ✔Acknowledgments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* facebook 뉴스피드를 시작으로 많은 앱, 웹에서 다양하게 사용되고있는 infinite scroll을 직접 한번 구현해 보고싶어 
+이번 movieAPI data를 이용해 useRef기능을 사용하여 inifitescroll app 을 사이드 프로젝트로 진행해보았다.
+처음 axios를 사용하지 않고 직접 자바스크립트 fetch 로만 AJAX통신을 구현하려하니, 코드가 복잡해지고, pageNumber구분이 쉽지 않던 중유튜브에 올라온 AJAX통신 관련 튜토리얼 중 axios라는 라이브러리에 대해 공부하게 되었다.
+복잡한 JS fetch를 구현법을 간단하게 만들어줄 라이브러리, axios를 사용해 json keywords들을 관리하니 너무너무 간편하고 보기 쉽게 코드를 나열 할 수 있어, 큰 어려움 없이 프로젝트를 마칠 수 있었다. 
