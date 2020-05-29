@@ -16,7 +16,7 @@
 yarn global add create-react-app yarn을 사용해 리액트 프로젝트 앱 생성하기<br/>
 AJAX통신을 용이하게 도와줄 axios라이브러리 사용<br/>
 https://openapi.gg.go.kr/RegionMnyFacltStus 회원가입후 개인 apikey 생성<br/>
-//dapi.kakao.com/ 카카오맵을 사용할 예정이므로, 카카오개발자페이지 가입 후 , api생성후 플랫폼에 url등록 localhost:3000 <br/>
+//dapi.kakao.com/ 카카오맵을 사용할 예정이므로, 카카오개발자페이지 가입 후 , <br/>api생성후 플랫폼에 url등록 테스트용이라면 => ex)localhost:3000 <br/>
 ### ✔Installing
 react환경구축 (yarn 사용해보기)
 패키지 매니저인 yarn 과 npm 마치 티몬과 쿠팡의 비교대상인마냥 큰 차이는 없는데요, <br/>
@@ -39,7 +39,7 @@ yarn start
 
 ## ✔KAKAO MAP, 공공API long, lat 연동하기, axios.create시도
 코드에서 axios get(url)을 통해 키워드 데이터를 추출할 수도 있지만.
-
+<pre><code>
  const api = axios.create({
     baseURL: "https://openapi.gg.go.kr/RegionMnyFacltStus",
     params: {
@@ -48,10 +48,10 @@ yarn start
     },
     cancelToken: new axios.CancelToken((c) => (cancel = c)),
   });
-
+</pre></code>
 앞서 api 안에서 url, params들을 미리 정리해두어 데이터를 받는 함수를 간추려 표현할 수 있다.
 
-
+<pre><code>
   function handleKeyPress(event) {
     event.preventDefault();
     api
@@ -60,14 +60,15 @@ yarn start
           CMPNM_NM: input,
         },
       })
+      </pre></code>
 이처럼 미리 선언한 api를 이용해 편리하게 데이터를 얻음,
-
+<pre><code>
  .then((data) => {
         const contents = data.data.RegionMnyFacltStus;
         setRow(contents[1].row);
         setHead(contents[0].head[0]);
       })
-
+</pre></code>
 데이터 부분은 전체검색결과(건수) 를불러오는 contents[0].head[0] 부분은 Head State로 <br/>
 나머지 모든 데이터(상호명, 주소, 업로드날짜 등등..) 은 setRow State에 보관하였다. 
 
@@ -78,6 +79,7 @@ yarn add react-kakao-map
 하지만. 몇번의 구글링으로,, 이미 많은 분들이 react사용에 간편한 npm들을 미리 배포중이셨다  😍😍
 
 사용법은 정말 간단했다 라이브러리설치후, 문서에 나온 방법처럼, 
+<pre><code>
 <KakaoMap
             id={item.SIGUN_CD}
             apiUrl={url}
@@ -92,6 +94,7 @@ yarn add react-kakao-map
               lng={item.REFINE_WGS84_LOGT}
             ></Marker>
           </KakaoMap>
+          </pre></code>
 지도를 표현하는 kakaoMap 컴포넌트와  주소(지점)에 MARK해주는 MARK(gps아이콘같이 생긴..)가 지원되었고<br/>
 내가 원하는 기능이 ..이미 다 구현되었다. lat, lng props에는 미리 받아두었던 공공 api 에서 가져온 lat, lng값을 각각 주었다. 
 
@@ -106,7 +109,7 @@ npm를 지웠다가 설치를 반복,, 다른 script도 많이 부쳤다 떼어�
     ></script>
 이 스크립트가 항상  <div id="root"></div> 내 app컴포넌트 위에 위치하여야 데이터를 받을 수가 있었던것이었다. <br/>
 혹시 .. 작동이 되지 않는다면 이부분도 체크해보길 바란다. 
-
+또한 카카오 개발자 웹사이트 플랫폼 url등록도 꼭 확인! 💦💦
 ## And coding style tests
 styled-components 적용
 아무리 작은 프로젝트라 하더라도 이쪽에서 변경한 h2이 저쪽에서 적용이 되고, 각 컴포넌트의 title인 h1의 클라스 이름을
