@@ -100,7 +100,7 @@ npm를 지웠다가 설치를 반복,,script를 부쳤다 떼어냈다의 반복
 이 스크립트가 항상  <div id="root"></div> 내 app컴포넌트 위에 위치하여야 데이터를 받을 수가 있었던것이었다. <br/>
 혹시 .. 작동이 되지 않는다면 이부분도 체크해보길 바란다. 
 또한 카카오 개발자 웹사이트 플랫폼 url등록도 꼭 확인! 💦💦
-## And coding style tests
+## using styled-components
 styled-components 적용
 아무리 작은 프로젝트라 하더라도 이쪽에서 변경한 h2이 저쪽에서 적용이 되고, 각 컴포넌트의 title인 h1의 클라스 이름을
 무한대로 지을수는 없는 법이다.<br/>
