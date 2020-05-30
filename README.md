@@ -1,7 +1,7 @@
 
 
 <h1>🛒지역화폐사용처 안내앱🛒</h1>
-
+<h2>DEMO :  https://sunhwa508.github.io/ggdata/</h2>
 
 ![Group 5 (1)](https://user-images.githubusercontent.com/61695175/83236488-8e3e3d80-a1ce-11ea-97d3-340a5bdf528c.png)
 
