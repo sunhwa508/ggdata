@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Appstyled, Titlestyled } from "./app.styled";
 import Card from "./Card/card";
 import { GlobalStyles } from "./global";
 import Footer from "./footer/footer";
+import { GgdataApi, PageApi } from "./api";
 function App() {
   const [searched, setSearched] = useState("");
   const [input, setInput] = useState();
   const [head, setHead] = useState();
   const [row, setRow] = useState();
+  const [page, setPage] = useState(1);
   let cancel;
-  const api = axios.create({
-    baseURL: "https://openapi.gg.go.kr/RegionMnyFacltStus",
-    params: {
-      KEY: "c3d322c1e2fc4cf0a90790ca45422920",
-      Type: "json",
-    },
-    cancelToken: new axios.CancelToken((c) => (cancel = c)),
-  });
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -25,26 +18,41 @@ function App() {
 
   function handleKeyPress(event) {
     event.preventDefault();
-    api
-      .get("/", {
-        params: {
-          CMPNM_NM: input,
-        },
-      })
+    GgdataApi.searchedApi(input)
       .then((data) => {
+        console.log(data.config.params.pIndex);
         const contents = data.data.RegionMnyFacltStus;
         setRow(contents[1].row);
         setHead(contents[0].head[0]);
       })
       .catch((error) => {
-        if (axios.isCancel(error)) return;
-        console.log("error");
+        alert("찾을 수 없는 데이터입니다.");
         setSearched("");
       });
     return () => cancel();
   }
 
-  console.log(head);
+  function gotoNextPage(event) {
+    event.preventDefault();
+    setPage((prev) => prev + 1);
+    GgdataApi.searchedApi(input, page).then((data) => {
+      const contents = data.data.RegionMnyFacltStus;
+      setRow(contents[1].row);
+      setHead(contents[0].head[0]);
+    });
+    console.log(page);
+  }
+
+  function gotoPrevPage() {
+    setPage((prev) => prev - 1);
+    GgdataApi.searchedApi(input, page).then((data) => {
+      const contents = data.data.RegionMnyFacltStus;
+      setRow(contents[1].row);
+      setHead(contents[0].head[0]);
+    });
+    console.log(page);
+  }
+
   return (
     <div>
       <GlobalStyles />
@@ -61,9 +69,11 @@ function App() {
       {row ? (
         <Card row={row} head={head} />
       ) : (
-        <Appstyled>찾을수가없습니더..💨</Appstyled>
+        <Appstyled>검색어가 없거나, 결과가 없습니다💨</Appstyled>
       )}
       <Footer />
+      {page > 1 ? <button onClick={gotoPrevPage}>◀</button> : null}
+      {page ? <button onClick={gotoNextPage}>▶</button> : null}
     </div>
   );
 }
