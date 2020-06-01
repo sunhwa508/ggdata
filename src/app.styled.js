@@ -47,3 +47,23 @@ export const Titlestyled = styled.h1`
   justify-content: center;
   align-items: center;
 `;
+
+export const Buttonstyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  button {
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    @media (max-width: 700px) {
+      font-size: 13px;
+    }
+  }
+`;

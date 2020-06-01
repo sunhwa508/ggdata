@@ -7,7 +7,7 @@ const api = axios.create({
   params: {
     KEY: "c3d322c1e2fc4cf0a90790ca45422920",
     Type: "json",
-    pIndex: "1",
+    pIndex: 1,
     pSize: "15",
   },
   cancelToken: new axios.CancelToken((c) => (cancel = c)),
