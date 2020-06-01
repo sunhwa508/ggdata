@@ -22,12 +22,3 @@ export const GgdataApi = {
       },
     }),
 };
-
-export const PageApi = {
-  pageNumber: (page) =>
-    api.get("/", {
-      params: {
-        pIndex: page,
-      },
-    }),
-};

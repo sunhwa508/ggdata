@@ -21,10 +21,11 @@ export const Appstyled = styled.form`
     width: 80%;
     border: 5px solid gray;
     -webkit-appearance: none;
+    outline: none;
   }
   button {
     width: 20%;
-
+    outline: none;
     -webkit-appearance: none;
   }
   input,
@@ -58,12 +59,13 @@ export const Buttonstyled = styled.div`
     outline: none;
     border: none;
     padding: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
     @media (max-width: 700px) {
       font-size: 13px;
+      margin-bottom: 70px;
     }
   }
 `;

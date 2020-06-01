@@ -3,7 +3,7 @@ import { Appstyled, Titlestyled, Buttonstyled } from "./app.styled";
 import Card from "./Card/card";
 import { GlobalStyles } from "./global";
 import Footer from "./footer/footer";
-import { GgdataApi, PageApi } from "./api";
+import { GgdataApi } from "./api";
 function App() {
   const [searched, setSearched] = useState("");
   const [input, setInput] = useState();
