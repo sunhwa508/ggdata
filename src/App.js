@@ -82,7 +82,7 @@ function App() {
       <Footer />
       <Buttonstyled>
         {page > 1 ? <button onClick={gotoPrevPage}>◀</button> : null}
-        {page && row && !lastPage ? (
+        {page && row && !lastPage && total > 15 ? (
           <button onClick={gotoNextPage}>▶</button>
         ) : null}
       </Buttonstyled>
