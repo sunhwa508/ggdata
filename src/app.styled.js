@@ -27,6 +27,7 @@ export const Appstyled = styled.form`
     width: 20%;
     outline: none;
     -webkit-appearance: none;
+    cursor: pointer;
   }
   input,
   button {
@@ -56,12 +57,14 @@ export const Buttonstyled = styled.div`
   width: 100%;
   button {
     background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     outline: none;
     border: none;
     padding: 10px;
     margin-bottom: 50px;
     border-radius: 10px;
     font-size: 20px;
+    margin: 10px;
     cursor: pointer;
     @media (max-width: 700px) {
       font-size: 13px;
